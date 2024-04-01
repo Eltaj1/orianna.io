@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orianna</title>
+    <title>Document</title>
     <link rel="icon" type="image/jpg" href="favicon.jpg">
     <nav>
             <a href="index.html">HOME</a>
-            <a href="https://www.instagram.com/oriannapvt?igsh=MWF5Y3RlNXh6d3I4NQ==">INSTAGRAM</a>
+            <a href="https://www.instagram.com/don_eltac/">INSTAGRAM</a>
             <a href="https://youtu.be/sXUKSxTP5xY">VIDEOS</a>
     </nav>
 </head>
@@ -54,23 +54,49 @@
         a {
             color: red;
         }
+        button {
+            background-color: rgb(226, 43, 220);
+            padding: 15px 10px;
+            color: white;
+            border: none;
+        }
     </style>
     <center>
     <h1>Watch together</h1>
     <div class="video-container">
         <iframe width="560" height="315" src="https://www.youtube.com/embed/sXUKSxTP5xY?si=GBPJxUE-rkj_cBBV" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
+    <br><br>
+    <h1>Press the button to hear a message!</h1>
+    <button id="speakButton">Speak</button>
     <footer>
         <p id="p"><script>document.getElementById("p").innerText = "© " + new Date().getFullYear()</script></p>
       </footer>
-</center>
-          <script>
+
+      <script>
         let orianna = 0;
 
         while (orianna <= 10) {
-            console.log(`${orianna} Orianna, u are the best!`);
+            console.log(`${orianna} Orianna, U are the best!`);
             orianna++;
         }
+            // Function to speak a message
+    function speakMessage(message) {
+      // Create a new instance of SpeechSynthesisUtterance
+      const speech = new SpeechSynthesisUtterance();
+      // Set the text to be spoken
+      speech.text = message;
+      // Speak the message
+      window.speechSynthesis.speak(speech);
+    }
+
+    // Event listener for the button click
+    document.getElementById('speakButton').addEventListener('click', function() {
+      // Call the speakMessage function with the desired message
+      speakMessage('Hello! My name is Orianna. Yeah, its not my voice, but i hope u will understand! Love you all!');
+    });
       </script>
+</center>
+<!-- HTML !-->
 </body>
 </html>
